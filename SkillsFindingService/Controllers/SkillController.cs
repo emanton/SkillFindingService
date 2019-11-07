@@ -10,7 +10,6 @@ using System.Web.Http;
 
 namespace SkillsFindingService.Controllers
 {
-    //[Authorize]
     [RoutePrefix("Skill")]
     public class SkillController : ApiController
     {

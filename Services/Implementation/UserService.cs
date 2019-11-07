@@ -44,6 +44,7 @@ namespace Services.Implementation
         public async Task<ICollection<UserSearchResult>> UserSearchAsync(string searchString)
         {
             // create search string
+            // use search system elastic search
             var users = await _userRepository.GetAllAsync();
             var skills = await _skillRepository.GetAllAsync();
             var matchedSkills = from s in skills where s.Name.ToLower().Contains(searchString.ToLower()) select s;
