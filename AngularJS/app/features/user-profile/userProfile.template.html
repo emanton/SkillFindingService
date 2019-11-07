@@ -1,0 +1,150 @@
+<!-- {"Id":"18","Firstname":"qwerty1","Lastname":"qwerty1","Age":0,"Birthday":"2018-05-14T02:35:24.917","IsMale":false,"Email":"atlan.super.net@mail.ru","Country":null,"City":null,"PassortCode":null,"PassportVerified":false,"Telephone":null,"Account":0,"IsAdmin":false} -->
+<main class="container my-profile">
+    <div class="row">
+        <div class="col-lg-9">
+            <section class="executor-about">
+                <div style="margin-right: 30px; text-align: center">
+                    <img src="img/user-avatar.jpg" alt="Имя Фамилия" class="executor-avatar" style="margin-right: 0px;">
+                </div>   
+                <div class="resume" style="width: 100%">
+                    <h2 class="resume-name">{{userProfileController.userData.Firstname}} {{userProfileController.userData.Lastname}} <span class="price-tag">{{userProfileController.userData.Salary}} грн/час</span></h2>
+                    <p>
+                        {{userProfileController.userData.Description}}
+                    </p>
+                    <!-- <div class="resume-city">Город {{userProfileController.userData.City ? userProfileController.userData.City : "Не указан"}}</div>
+                    <div class="resume-age">Возраст {{userProfileController.userData.Age ? userProfileController.userData.Age : "Не указан"}}</div> -->
+                    <!-- <p class="resume-about">{{userProfileController.userData.Desctiption}} </p> TODO   -->
+                </div>
+            </section>
+
+            <!-- Notification -->
+            <!-- <div class="orders-notification">
+                <h3>Добавьте уведомление о ваших услугах</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                <a class="notify-button open-popup" href="#add-services">Добавить обьявление</a>
+            </div> -->
+
+            <section class="executor-feedbacks">
+                <div class="feedbacks-head">
+                    <h2 class="title">Отзывы</h2>
+                    <div class="success-counters">
+                        <p>Отзывов: <a href="#" class="feedbacks-counter">{{userProfileController.commentsCount}}</a></p>
+                        <p>Средняя оценка: <a href="#" class="rating-counter">{{userProfileController.averageRate}}</a></p>
+                    </div>
+                </div>
+                <div class="fb-container">
+                    <article class="fb-item" ng-repeat="comment in userProfileController.comments">
+                        <h4 class="fb-author-name"><a href="#">{{comment.UserFrom.Firstname}} {{comment.UserFrom.Lastname}}</a></h4>
+                        <span class="fb-publication-date">{{comment.date | manipulatingDateFilter}}</span>
+                        <a class="delete-btn" ng-click="userProfileController.deleteComment(comment.Id)" href="javascript: void(0)" ng-if="comment.UserFrom.Id == userProfileController.currentUser.Id"></a>
+                        <div class="fb-assessment">
+                            <ul class='stars'>
+                                <li class='star'>
+                                    <i class="active"></i>
+                                </li>
+                                <li class='star'>
+                                    <i ng-class="{'active': comment.Rate > 1}"></i>
+                                </li>
+                                <li class='star'>
+                                    <i ng-class="{'active': comment.Rate > 2}"></i>
+                                </li>
+                                <li class='star'>
+                                    <i ng-class="{'active': comment.Rate > 3}"></i>
+                                </li>
+                                <li>
+                                    <i ng-class="{'active': comment.Rate > 4}"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="feedback-text">{{comment.Text}}</p>
+                    </article>
+                </div>
+                <article class="fb-item" ng-init="rate = 5" ng-if="userProfileController.profileUserId != userProfileController.currentUser.Id">
+                    <h4 class="fb-author-name"><a href="javascript: void(0)">Оставьте свой отзыв</a></h4>
+                    <br />
+                    <br />
+                    <br />
+
+                    <div class="fb-assessment">
+                        <span class="text-before-stars">
+                            Поставьте оценку
+                        </span>
+                        <ul class="stars">
+                            <li class="star" ng-click="rate = 1">
+                                <i class="active"></i>
+                            </li>
+                            <li class="star" ng-click="rate = 2">
+                                <i ng-class="{'active': rate > 1}"></i>
+                            </li>
+                            <li class="star" ng-click="rate = 3">
+                                <i ng-class="{'active': rate > 2}"></i>
+                            </li>
+                            <li class="star" ng-click="rate = 4">
+                                <i ng-class="{'active': rate > 3}"></i>
+                            </li>
+                            <li class="star" ng-click="rate = 5">
+                                <i ng-class="{'active': rate > 4}"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="big-white-textbox">
+                        <textarea ng-model="userProfileController.newCommentText" />
+                    </div>
+                    <input type="submit" id="change-pass-save-btn" class="save-btn" value="Написать" ng-click="userProfileController.sendComment(rate)">
+                </article>
+            </section>
+        </div>
+        <aside class="col-lg-3">
+            <div class="executor-aside-info">
+                <div class="executor-contacts">
+                    <span>Номер телефона:</span>
+                    <p class="tel-number">{{userProfileController.userData.Telephone}}</p>
+                </div>
+                <div class="checked-executor">
+                    <div class="checked-icon"></div>
+                    <p>Проверенный исполнитель</p>
+                </div>
+                <ul class="verified-list">
+                    <li>
+                        <div class="checked-icon"></div>
+                        <p>На сайте с {{userProfileController.userData.RegistrationDate | manipulatingDateFilter}}</p>
+                    </li>
+                    <!-- <li>
+                        <div class="checked-icon"></div>
+                        <p>Сверены паспортные данные</p>
+                    </li>
+                    <li>
+                        <div class="checked-icon"></div>
+                        <p>Подтвержден номер телефона</p>
+                    </li>
+                    <li>
+                        <div class="checked-icon"></div>
+                        <p>Подтвержден E-mail</p>
+                    </li> -->
+                </ul>
+                <div class="specializations">
+                    <h4>Предоставляемые услуги</h4>
+                    <ul class="specializations-list edit">
+                        <li ng-repeat="skill in userProfileController.userSkills">
+                            <p style="width: 200px;">{{skill.Name}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="pagination row triggered">
+        <div class="col-md-12">
+            <ul>
+                <li><a href="#">«</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+</main>

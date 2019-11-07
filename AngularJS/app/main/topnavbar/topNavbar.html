@@ -1,0 +1,37 @@
+<header class="page-header" id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4"> 
+                <!-- <a href="#" class="main-logo" title="JustRealy">
+                    <img src="img/logo.png" alt="JustRealy logo" title="JustRealy">
+                </a> -->
+                <a href="#" class="main-logo" title="JustRealy" style="font-size: 30px">Центр аутсерсинга</a>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="executor-search-block">
+                    <input type="search" ng-model="topnavbarCtrl.searchText" class="search-executor-field" name="search-executor" id="search-executor-field" placeholder="Кого вы ищете?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Кого вы ищете?'">
+                    <button class="search-executor-button" id="search-executor-button" ng-click="topnavbarCtrl.findBtnClick(topnavbarCtrl.searchText)"></button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 executor-align">
+                <p ng-if="!topnavbarCtrl.currentUser" class="sign-links">
+                    <a class="open-popup" href="javascript: void(0)" ng-click="topnavbarCtrl.loginBtnClick()">Войти</a> 
+                    или 
+                    <a class="open-popup" href="javascript: void(0)" ng-click="topnavbarCtrl.registerBtnClick()">Зарегистрироваться</a>
+                </p>
+
+                <div ng-if="topnavbarCtrl.currentUser" ng-init="showOptions = false">
+                    <a href="javascript: void(0)" ng-click="!showOptions ? showOptions = true : showOptions = false" class="executor-requisites">
+                        <img id="executor-thumbnail" class="executor-thumbnail" src="img/user-avatar.jpg" alt="executor">
+                        <p id="header-executor-name" class="header-executor-name">{{topnavbarCtrl.currentUser.Firstname}} {{topnavbarCtrl.currentUser.Lastname}}</p>
+                    </a>
+                    <ul class="executor-menu" ng-class="{active:showOptions}">
+                        <li><a ui-sref="app.main.myProfile">Мой профиль</a></li>
+                        <!-- <li><a href="javascript: void(0)" >Настройки</a></li> -->
+                        <li><a href="javascript: void(0)" ng-click="topnavbarCtrl.logout()">Выход</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

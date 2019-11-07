@@ -1,0 +1,315 @@
+<!-- {"Id":"18","Firstname":"qwerty1","Lastname":"qwerty1","Age":0,"Birthday":"2018-05-14T02:35:24.917","IsMale":false,"Email":"atlan.super.net@mail.ru","Country":null,"City":null,"PassortCode":null,"PassportVerified":false,"Telephone":null,"Account":0,"IsAdmin":false} -->
+<main class="container my-profile">
+    <div class="row">
+        <div class="col-lg-9">
+            <section class="executor-about">
+                <div style="margin-right: 30px; text-align: center">
+                    <img src="img/user-avatar.jpg" alt="Имя Фамилия" class="executor-avatar" style="margin-right: 0px;">
+                    <div>
+                            <input type="button" class="orabge-btn" value="Обновить фотографию" ng-click="">
+                    </div>
+                    
+                </div>   
+                <div class="resume" style="width: 100%">
+                    <h2 class="resume-name">{{myProfileController.userData.Firstname}} {{myProfileController.userData.Lastname}} <span class="price-tag">{{myProfileController.userData.Salary}} грн/час</span></h2>
+                    <div ng-if="myProfileController.descriptionMode == 'edit'">
+                        <div class="big-white-textbox">
+                            <textarea ng-model="myProfileController.userData.Description" />
+                        </div>
+                        <div>
+                            <input type="button" class="orabge-btn" value="Сохранить" ng-click="myProfileController.saveDescription()">
+                        </div>
+                    </div>
+                    <div ng-if="myProfileController.descriptionMode == 'read'">
+                        <p ng-if="myProfileController.userData.Description.length > 0">
+                            {{myProfileController.userData.Description}}
+                        </p>
+                        <p ng-if="!(myProfileController.userData.Description.length > 0)">
+                            Описание не заполненное
+                        </p>
+                        <!-- <a href="" class="edit-btn"></a> -->
+                        <div>
+                            <input type="button" class="orabge-btn" value="Обновить" ng-click="myProfileController.editDescription()">
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="resume-city">Город {{myProfileController.userData.City ? myProfileController.userData.City : "Не указан"}}</div>
+                    <div class="resume-age">Возраст {{myProfileController.userData.Age ? myProfileController.userData.Age : "Не указан"}}</div> -->
+                    <!-- <p class="resume-about">{{myProfileController.userData.Description}} </p> TODO   -->
+                </div>
+                
+            </section>
+            
+            <!-- Notification -->
+            <!-- <div class="orders-notification">
+                <h3>Добавьте уведомление о ваших услугах</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                <a class="notify-button open-popup" href="#add-services">Добавить обьявление</a>
+            </div> -->
+
+            <div ng-init="activeTab = 'Information'">
+                <div class="profile-trigger">
+                    <a class="edit-profile-switch-btn" ng-class="{'active' : activeTab == 'Information'}" ng-click="activeTab = 'Information'">Редактировать личную информацию</a>
+                    <a class="edit-profile-switch-btn" ng-class="{'active' : activeTab == 'Setting'}" ng-click="activeTab = 'Setting'">Настройки</a>
+                    <a class="feedbacks-switch-btn" ng-class="{'active' : activeTab == 'Feebback'}" ng-click="activeTab = 'Feebback'">Отзывы</a>
+                </div>
+
+                <section class="profile-editing" ng-if="activeTab == 'Information'">
+                    <h3 class="title">Редактировать личную информация</h3>
+                    <form class="user-data-info editing-form">
+                        <div class="col1 column">
+                            <div class="input-grid">
+                                <label for="user-firstname" class="editing-label">Имя</label>
+                                <input type="text" name="user-firstname" id="user-firstname" ng-model="myProfileController.userData.Lastname">
+                            </div>
+                            <div class="input-grid">
+                                <label for="user-secondname" class="editing-label">Фамилия</label>
+                                <input type="text" name="user-secondname" id="user-secondname" ng-model="myProfileController.userData.Firstname">
+                            </div>
+                            <!-- <div class="input-grid">
+                                <label for="user-city" class="editing-label">Город</label>
+                                <input type="text" name="user-city" id="user-city">
+                            </div>
+                            <div class="input-grid">
+                                <label for="user-street" class="editing-label">Улица</label>
+                                <input type="text" name="user-street" id="user-street">
+                            </div>
+                            <div class="input-grid">
+                                <label for="user-housenumber" class="editing-label">Дом</label>
+                                <input type="text" name="user-housenumber" id="user-housenumber">
+                            </div> -->
+                            <div class="input-grid">
+                                <label for="user-phone" class="editing-label">Телефон</label>
+                                <input type="tel" name="user-phone" id="user-phone" ng-model="myProfileController.userData.Telephone">
+                            </div>
+                            <div class="input-grid">
+                                <label for="user-email" class="editing-label">E-mail</label>
+                                <input type="email" name="user-email" id="user-email" ng-model="myProfileController.userData.Email">
+                            </div>
+                            <div class="input-grid">
+                                <label for="user-salary" class="editing-label">Зарплата</label>
+                                <input type="text" name="user-salary" id="user-salary" ng-model="myProfileController.userData.Salary">
+                            </div>
+                            <div class="input-grid radios">
+                                <p class="editing-label">Пол</p>
+                                <div class="radio-buttons">
+                                    <input type="radio" class="radio" name="sex" id="sex-male" ng-model="myProfileController.userData.IsMale" ng-value="true">
+                                    <label for="sex-male">Мужской</label>
+                                    <input type="radio" class="radio" name="sex" id="sex-female" ng-model="myProfileController.userData.IsMale" ng-value="false">
+                                    <label for="sex-female">Женский</label>
+                                </div>
+                            </div>
+                            <input type="submit" id="user-data-save-btn" class="save-btn" value="Сохранить" ng-click="myProfileController.updateUserData()">
+                        </div>
+                    </form>
+                </section>
+
+                <section class="profile-editing" ng-if="activeTab == 'Setting'">
+                    <!--<h3 class="">Настройте время, когда ваш номер телефона будет виден другим людям</h3>
+                    <div class="active-page-triger">
+                        <label class="checkbox">
+                            <input type="checkbox" />
+                            <div class="checkbox__text">Никогда не показывать номер телефона</div>
+                        </label>
+                    </div>
+                    <form class="work-data-info editing-form">
+                         <div class="worktime">
+                            <label for="worktime-from" class="editing-label">С</label>
+                            <select name="worktime-from" id="worktime-from" class="dropdown">
+                                <option value="none">- От -</option>
+                                <option value="0">0:00</option>
+                                <option value="1">1:00</option>
+                                <option value="2">2:00</option>
+                                <option value="3">3:00</option>
+                                <option value="4">4:00</option>
+                                <option value="5">5:00</option>
+                                <option value="6">6:00</option>
+                                <option value="7">7:00</option>
+                                <option value="8">8:00</option>
+                                <option value="9">9:00</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00</option>
+                                <option value="13">13:00</option>
+                                <option value="14">14:00</option>
+                                <option value="15">15:00</option>
+                                <option value="16">16:00</option>
+                                <option value="17">17:00</option>
+                                <option value="18">18:00</option>
+                                <option value="19">19:00</option>
+                                <option value="20">20:00</option>
+                                <option value="21">21:00</option>
+                                <option value="22">22:00</option>
+                                <option value="23">23:00</option>
+                            </select>
+                            <label for="worktime-to" class="editing-label">По</label>
+                            <select name="worktime-to" id="worktime-to" class="dropdown">
+                                <option value="none">- До -</option>
+                                <option value="0">0:00</option>
+                                <option value="1">1:00</option>
+                                <option value="2">2:00</option>
+                                <option value="3">3:00</option>
+                                <option value="4">4:00</option>
+                                <option value="5">5:00</option>
+                                <option value="6">6:00</option>
+                                <option value="7">7:00</option>
+                                <option value="8">8:00</option>
+                                <option value="9">9:00</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00</option>
+                                <option value="13">13:00</option>
+                                <option value="14">14:00</option>
+                                <option value="15">15:00</option>
+                                <option value="16">16:00</option>
+                                <option value="17">17:00</option>
+                                <option value="18">18:00</option>
+                                <option value="19">19:00</option>
+                                <option value="20">20:00</option>
+                                <option value="21">21:00</option>
+                                <option value="22">22:00</option>
+                                <option value="23">23:00</option>
+                            </select>
+                        </div>
+                        <div class="workdays">
+                            <input class="checkbox" type="checkbox" id="mon" name="mon" value="Понедельник">
+                            <label for="mon">Понедельник</label>
+                            <input class="checkbox" type="checkbox" id="tue" name="tue" value="Вторник">
+                            <label for="tue">Вторник</label>
+                            <input class="checkbox" type="checkbox" id="wed" name="wed" value="Среда">
+                            <label for="wed">Среда</label>
+                            <input class="checkbox" type="checkbox" id="thu" name="thu" value="Четверг">
+                            <label for="thu">Четверг</label>
+                            <input class="checkbox" type="checkbox" id="fri" name="fri" value="Пятница">
+                            <label for="fri">Пятница</label>
+                            <input class="checkbox" type="checkbox" id="sat" name="sat" value="Суббота" checked>
+                            <label for="sat">Суббота</label>
+                            <input class="checkbox" type="checkbox" id="sun" name="sun" value="Воскресенье" checked>
+                            <label for="sun">Воскресенье</label>
+                        </div>
+                        <input type="submit" id="work-data-save-btn" class="save-btn" value="Сохранить">
+                    </form> -->
+                    
+                    <form class="change-password-form editing-form">
+                        <h3 class="">Изменить пароль</h3>
+                        <div class="input-grid">
+                            <label for="c-old-pass" class="editing-label">Старый пароль</label>
+                            <input type="password" name="c-old-pass" id="c-old-pass" ng-model="myProfileController.userSettings.OldPassword">
+                        </div>
+                        <div class="input-grid">
+                            <label for="c-new-pass" class="editing-label">Новый пароль</label>
+                            <input type="password" name="c-new-pass" id="c-new-pass" ng-model="myProfileController.userSettings.NewPassword">
+                        </div>
+                        <div class="input-grid">
+                            <label for="c-repeat-pass" class="editing-label">Повторите новый пароль</label>
+                            <input type="password" name="c-repeat-pass" id="c-repeat-pass">
+                        </div>
+                        <input type="submit" id="change-pass-save-btn" class="save-btn" value="Сохранить" ng-click="myProfileController.updateUserSettings()">
+                    </form>
+                </section>
+                <section class="executor-feedbacks" ng-if="activeTab == 'Feebback'">
+                    <div class="feedbacks-head">
+                        <h2 class="title">Отзывы</h2>
+                        <div class="success-counters">
+                            <p>Отзывов: <a href="#" class="feedbacks-counter">{{myProfileController.commentsCount}}</a></p>
+                            <p>Средняя оценка: <a href="#" class="rating-counter">{{myProfileController.averageRate}}</a></p>
+                        </div>
+                    </div>
+                    <div class="fb-container">
+                        <article class="fb-item" ng-repeat="comment in myProfileController.comments">
+                            <h4 class="fb-author-name"><a href="#">{{comment.UserFrom.Firstname}} {{comment.UserFrom.Lastname}}</a></h4>
+                            <span class="fb-publication-date">{{comment.date | manipulatingDateFilter}}</span>
+                            <a class="delete-btn" ng-click="myProfileController.deleteComment(comment.Id)" href="javascript: void(0)" ng-if="comment.UserFrom.Id == myProfileController.userData.Id"></a>
+                            <div class="fb-assessment">
+                                <ul class='stars'>
+                                    <li class='star'>
+                                        <i class="active"></i>
+                                    </li>
+                                    <li class='star'>
+                                        <i ng-class="{'active': comment.Rate > 1}"></i>
+                                    </li>
+                                    <li class='star'>
+                                        <i ng-class="{'active': comment.Rate > 2}"></i>
+                                    </li>
+                                    <li class='star'>
+                                        <i ng-class="{'active': comment.Rate > 3}"></i>
+                                    </li>
+                                    <li>
+                                        <i ng-class="{'active': comment.Rate > 4}"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="feedback-text">{{comment.Text}}</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <aside class="col-lg-3">
+            <div class="executor-aside-info">
+                <div class="executor-contacts">
+                    <span>Номер телефона:</span>
+                    <p class="tel-number">{{myProfileController.userData.Telephone}}</p>
+                </div>
+                <div class="checked-executor">
+                    <div class="checked-icon"></div>
+                    <p>Проверенный исполнитель</p>
+                </div>
+                <ul class="verified-list">
+                    <li>
+                        <div class="checked-icon"></div>
+                        <p>На сайте с {{myProfileController.userData.RegistrationDate | manipulatingDateFilter}}</p>
+                    </li>
+                    <!-- <li>
+                        <div class="checked-icon"></div>
+                        <p>Сверены паспортные данные</p>
+                    </li>
+                    <li>
+                        <div class="checked-icon"></div>
+                        <p>Подтвержден номер телефона</p>
+                    </li>
+                    <li>
+                        <div class="checked-icon"></div>
+                        <p>Подтвержден E-mail</p>
+                    </li> -->
+                </ul>
+                <div class="specializations">
+                    <h4>Предоставляемые услуги</h4>
+                    <ul class="specializations-list edit">
+                        <li ng-repeat="skill in myProfileController.userSkills">
+                            <p style="width: 200px;">{{skill.Name}}</p>
+                            <a ng-click="myProfileController.deleteUserSkill(skill.Id)"></a>
+                        </li>
+                            
+                        <!-- <li>
+                            <p>Доставка еды</p>
+                            <a></a>
+                        </li>
+                        <li>
+                            <p>Уборка</p>
+                            <a></a>
+                        </li> -->
+                    </ul>
+
+                    <br />
+                    <br />
+
+                    <input type="submit" id="change-pass-save-btn" class="save-btn" value="Добавить услугу" ng-click="myProfileController.addSkill()">
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="pagination row triggered">
+        <div class="col-md-12">
+            <ul>
+                <li><a href="#">«</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+</main>

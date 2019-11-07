@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta charset="utf-8" />
+    <title>JustRely</title> 
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link href="lib/lobibox/lobibox.css" rel="stylesheet" />
+    <!-- <link href="lib/sweetalert/dist/sweetalert.css" rel="stylesheet">
+    <link href="lib/select2/select2.min.css" rel="stylesheet">
+    <link href="lib/angular-bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/daterangepicker-2.1.25/daterangepicker.css" rel="stylesheet"> -->
+    <!-- <link href="lib/angular-bootstrap/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="css/fonts.css" rel="stylesheet" />
+    <link href="css/libs.css" rel="stylesheet" />
+    <link href="css/libs.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/media.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- <link href="lib/nprogress-0.2.0/nprogress-0.2.0.css" rel="stylesheet" /> -->
+
+</head>
+<body>
+<div ui-view id="app"></div>
+
+<!--Library-->
+<script src="lib/jquery-3.1.1/jquery-3.1.1.js" type="application/javascript"></script>
+<script src="lib/bootstrap.file-input.js" type="application/javascript"></script>
+<script src="lib/angular-1.6.1/angular.js" type="application/javascript"></script>
+<script src="lib/angular-ui-router-1.0.11/angular-ui-router.js" type="application/javascript"></script>
+<script src="lib/angular-messages-1.6.1/angular-messages.js" type="application/javascript"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap-tpls-2.2.0.js" type="application/javascript"></script>
+<script src="lib/angular-bootstrap-show-errors/src/showErrors.min.js" type="application/javascript"></script>
+<script src="lib/angular-permission-5.3.2/angular-permission.js" type="application/javascript"></script>
+<script src="lib/angular-permission-5.3.2/angular-permission-ui.js" type="application/javascript"></script>
+<script src="lib/angular-sanitize-1.6.1/angular-sanitize.min.js" type="application/javascript"></script>
+<script src="lib/signalR/jquery.signalR-2.2.0.js" type="application/javascript"></script>
+<script src="lib/select2/select2.min.js" type="application/javascript"></script>
+<script src="lib/sweetalert/dist/sweetalert.min.js" type="application/javascript"></script>
+<script src="lib/ngSweetAlert/SweetAlert.min.js" type="application/javascript"></script>
+<script src="lib/ng-table/dist/ng-table.min.js" type="application/javascript"></script>
+<script src="lib/hyphenator/Hyphenator.min.js" type="application/javascript"></script>
+<script src="lib/lobibox/lobibox.min.js" type="application/javascript"></script>
+<script src="lib/lobibox/messageboxes.min.js" type="application/javascript"></script>
+<script src="lib/lobibox/notifications.min.js" type="application/javascript"></script>
+<script src="lib/lodash/lodash.js" type="application/javascript"></script>
+<script src="lib/d3.min.js" type="application/javascript"></script>
+<script src="lib/FileSaver.min.js" type="application/javascript"></script>
+<script src="lib/nprogress-0.2.0/nprogress-0.2.0.js" type="application/javascript"></script>
+<script src="lib/daterangepicker-2.1.25/moment.js" type="application/javascript"></script>
+<script src="lib/daterangepicker-2.1.25/daterangepicker.js" type="application/javascript"></script>
+<script src="lib/jquery-ui-1.12.1/jquery-ui.min.js" type="application/javascript"></script>
+<script src="lib/powerbi-client/dist/powerbi.js" type="application/javascript"></script>
+
+<script src="lib/angular-breadcrumb-0.5.0/angular-breadcrumb.js"></script>
+
+<!--Application-->
+<script src="app/app.module.js" type="application/javascript"></script>
+<script src="app/app.config.js" type="application/javascript"></script>
+<script src="app/app.routes.js" type="application/javascript"></script>
+
+<!--Core-->
+<script src="app/core/core.module.js" type="application/javascript"></script>
+<script src="app/core/web-api/webApi.service.js" type="application/javascript"></script>
+<script src="app/core/web-api/webApiSettings.constants.js" type="application/javascript"></script>
+<script src="app/core/services/storageManager.service.js" type="application/javascript"></script>
+<script src="app/core/services/timezone.service.js" type="application/javascript"></script>
+<script src="app/core/authorization/authorization.constants.js" type="application/javascript"></script>
+<script src="app/core/authorization/authGuard.provider.js" type="application/javascript"></script>
+<script src="app/core/authorization/authorizationProvider.service.js" type="application/javascript"></script>
+<script src="app/core/authorization/authInterceptor.factory.js" type="application/javascript"></script>
+<script src="app/core/errors/errorModel.factory.js" type="application/javascript"></script>
+<script src="app/core/errors/errorHandler.service.js" type="application/javascript"></script>
+<script src="app/core/errors/errorEntityTypes.constants.js" type="application/javascript"></script>
+
+<!--Utils-->
+<script src="app/utils/utils.module.js" type="application/javascript"></script>
+<script src="app/utils/tabManager.factory.js" type="application/javascript"></script>
+<script src="app/utils/guid.factory.js" type="application/javascript"></script>
+<script src="app/utils/modal.service.js" type="application/javascript"></script>
+<script src="app/core/utils/versionComparator.service.js" type="application/javascript"></script>
+<script src="app/core/utils/uiNotifications.factory.js" type="application/javascript"></script>
+<script src="app/core/utils/observer.factory.js" type="application/javascript"></script>
+<script src="app/utils/tableDispatcher.factory.js" type="application/javascript"></script>
+<script src="app/utils/manipulatingDate.filter.js" type="application/javascript"></script>
+<script src="app/utils/convertDateFromUTC.filter.js" type="application/javascript"></script>
+
+<!--Modals-->
+<script src="app/modals/modals.module.js" type="application/javascript"></script>
+<script src="app/modals/modalDispatcher.factory.js" type="application/javascript"></script>
+<script src="app/modals/login/login.controller.js" type="application/javascript"></script>
+<script src="app/modals/register/register.controller.js" type="application/javascript"></script>
+<script src="app/modals/add-skill/addSkill.controller.js" type="application/javascript"></script>
+<script src="app/modals/create-new-skill/createNewSkill.controller.js" type="application/javascript"></script>
+
+<!--Components-->
+<script src="app/components/components.module.js" type="application/javascript"></script>
+
+<script src="app/utils/sorter.factory.js" type="application/javascript"></script>
+
+<!--Entities-->
+<script src="app/entities/entities.module.js" type="application/javascript"></script>
+<script src="app/entities/user/userRoles.constants.js" type="application/javascript"></script>
+<script src="app/entities/user/userModel.factory.js" type="application/javascript"></script>
+<script src="app/entities/user/userProvider.service.js" type="application/javascript"></script>
+
+
+<!---------------- Main ------------------->
+
+<!--TopNavbar-->
+<script src="app/main/topnavbar/topNavbar.module.js" type="application/javascript"></script>
+<script src="app/main/topnavbar/topNavbar.controller.js" type="application/javascript"></script>
+<script src="app/main/topnavbar/topNavbar.directive.js" type="application/javascript"></script>
+<script src="app/main/topnavbar/topNavbar.constants.js" type="application/javascript"></script>
+<script src="app/main/topnavbar/topNavbar.service.js" type="application/javascript"></script>
+
+<!--Footer-->
+<script src="app/main/footer/footer.module.js" type="application/javascript"></script>
+<script src="app/main/footer/footer.controller.js" type="application/javascript"></script>
+<script src="app/main/footer/footer.directive.js" type="application/javascript"></script>
+
+
+<!--Features-->
+
+<!--Home-->
+<script src="app/features/home/home.module.js" type="application/javascript"></script>
+<script src="app/features/home/home.constants.js" type="application/javascript"></script>
+<script src="app/features/home/home.service.js" type="application/javascript"></script>
+<script src="app/features/home/home.controller.js" type="application/javascript"></script>
+
+<!--Search-->
+<script src="app/features/search/search.module.js" type="application/javascript"></script>
+<script src="app/features/search/search.constants.js" type="application/javascript"></script>
+<script src="app/features/search/search.service.js" type="application/javascript"></script>
+<script src="app/features/search/search.controller.js" type="application/javascript"></script>
+
+<!--My Profile-->
+<script src="app/features/my-profile/myProfile.module.js" type="application/javascript"></script>
+<script src="app/features/my-profile/myProfile.constants.js" type="application/javascript"></script>
+<script src="app/features/my-profile/myProfile.service.js" type="application/javascript"></script>
+<script src="app/features/my-profile/myProfile.controller.js" type="application/javascript"></script>
+
+
+<!--My Profile-->
+<script src="app/features/user-profile/userProfile.module.js" type="application/javascript"></script>
+<script src="app/features/user-profile/userProfile.constants.js" type="application/javascript"></script>
+<script src="app/features/user-profile/userProfile.service.js" type="application/javascript"></script>
+<script src="app/features/user-profile/userProfile.controller.js" type="application/javascript"></script>
+
+<!--Admin-->
+<script src="app/features/admin/admin.module.js" type="application/javascript"></script>
+<script src="app/features/admin/admin.constants.js" type="application/javascript"></script>
+<script src="app/features/admin/admin.service.js" type="application/javascript"></script>
+<script src="app/features/admin/admin.controller.js" type="application/javascript"></script>
+
+<!--Template-->
+<script src="app/templates/templates.module.js" type="application/javascript"></script>
+
+</body>
+</html>

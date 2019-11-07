@@ -1,0 +1,23 @@
+{
+  "name": "DBMSys",
+  "version": "1.3.0",
+  "description": "AngularJs Admin Panel",
+  "repository": "",
+  "author": "DBMSys",
+  "license": "Envato REGULAR LICENSE",
+  "dependencies": {
+    "powerbi-client": "^2.4.7"
+  },
+  "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-angular-templates": "1.1.0",
+    "grunt-cache-bust": "1.6.0",
+    "grunt-contrib-clean": "1.1.0",
+    "grunt-contrib-compress": "1.4.1",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "2.0.0",
+    "grunt-contrib-uglify": "2.2.0",
+    "jquery-ui": "^1.12.1"
+  }
+}

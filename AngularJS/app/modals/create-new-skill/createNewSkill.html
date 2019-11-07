@@ -1,0 +1,52 @@
+<div id="add-services" class="add-services-popup white-popup">
+    <h3>Предложить новую услугу</h3>
+    <form class="sign-up-form" method="POST">
+        <input       
+            ng-model="categoryData.Name"
+            style="display: block"     
+            type="text"
+            class="input-field"
+            name="executor-email"
+            placeholder="Название Категории"
+            oninvalid="this.setCustomValidity('Введите Название услуги')"
+            oninput="setCustomValidity('')"
+            required>
+            <br />
+        <div class="mid-white-textbox">
+            <textarea placeholder="Описание категории" ng-model="categoryData.Description" oninvalid="this.setCustomValidity('Введите Название услуги')" required/>
+        </div>
+        <input type="submit" id="change-pass-save-btn" class="save-btn" value="Предложить категорию" ng-click="createCategory()">
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <form class="sign-up-form" method="POST">
+        <select style="display: block;     width: 214px;" name="rate-to" id="rate-to" ng-model="skillData.Category" class="dropdown"
+        ng-options="category as category.Name for category in categories track by category.Id">
+        </select>
+        <br />
+        <input
+            ng-model="skillData.Name"
+            style="display: block"         
+            type="text"
+            class="input-field"
+            name="executor-email"
+            placeholder="Название услуги"
+            oninvalid="this.setCustomValidity('Введите Название услуги')"
+            oninput="setCustomValidity('')"
+            required>
+            <br />
+        <div class="mid-white-textbox">
+            <textarea placeholder="Описание услуги" ng-model="skillData.Description" oninvalid="this.setCustomValidity('Введите Название услуги')" required/>
+        </div>
+
+        <div class="mid-white-textbox">
+            <textarea placeholder="Текст, который поможет найти данную услугу во время поиска" ng-model="skillData.SearchString" oninvalid="this.setCustomValidity('Введите Название услуги')" required/>
+        </div>
+        <button id="" class="save-btn" ng-click="cancel()">Отмена</button>
+        <input type="submit" id="change-pass-save-btn" class="save-btn" value="Предложить услугу" ng-click="createSkill()">
+    </form>
+</div>

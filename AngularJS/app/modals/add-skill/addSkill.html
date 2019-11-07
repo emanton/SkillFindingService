@@ -1,0 +1,30 @@
+<div id="add-services" class="add-services-popup white-popup">
+    <h3>Добавьте услугу</h3>
+    <div class="should-be-done">
+        <div class="should-be-field-wrap">
+            <input type="text" class="should-be-done-field" name="should-be-done" id="should-be-done-field" placeholder="Напишите, что нужно сделать" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Напишите, что нужно сделать'">
+        </div>
+        <button class="found-button">Найти</button>
+    </div>
+    <div class="table-scroll" style="margin-bottom: 30px; margin-top: 30px;">
+        <table class="searching-results" style="margin: 0px;">
+            <tr>
+                <th>Категория</th>
+                <th>Услуга</th>
+            </tr>
+
+            <tr ng-repeat="skill in skills">
+                <td><div class="break-word">{{skill.Category.Name}}</div></td>
+                <td>
+                    <p>{{skill.Name}}</p>
+                    <button ng-if="skill.active" class="add-service-btn red" ng-click="deleteUserSkills(skill.Id)">Удалить</button>
+                    <button ng-if="!skill.active" class="add-service-btn active" ng-click="addUserSkills(skill.Id)">Добавить</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="buttons centered-content">
+        <button id="" class="save-btn" ng-click="cancel()">Готово</button>
+        <button id="" class="save-btn" ng-click="suggestNewSkill()">Предложить новую услугу</button>
+    </div>
+</div>

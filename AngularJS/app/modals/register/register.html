@@ -1,0 +1,14 @@
+<div id="sign-up-popup" class="sign-popup white-popup mfp-close-btn-in">
+    <h3>Регистрация</h3>
+    <form class="sign-up-form" method="POST">
+        <input ng-model="userData.Email" type="email" class="input-field" name="executor-email" placeholder="E-mail" onblur="this.placeholder = 'E-mail'" oninvalid="this.setCustomValidity('Введите Ваш e-mail адрес')" oninput="setCustomValidity('')" required>
+        <input ng-model="userData.Telephone" type="text" class="input-field" name="executor-telephone" placeholder="Номер телефона" onblur="this.placeholder = 'Номер телефона'" oninvalid="this.setCustomValidity('Введите Ваш Номер телефона')" oninput="setCustomValidity('')" required>
+        <input ng-model="userData.Firstname" type="text" class="input-field" name="executor-firstname" placeholder="Имя" onblur="this.placeholder = 'Имя'" oninvalid="this.setCustomValidity('Введите Ваше имя')" oninput="setCustomValidity('')" required>
+        <input ng-model="userData.Lastname" type="text" class="input-field" name="executor-secondname" placeholder="Фамилия" onblur="this.placeholder = 'Фамилия'" oninvalid="this.setCustomValidity('Введите Вашу фамилию')" oninput="setCustomValidity('')" required>
+        <input ng-model="userData.Password" type="password" class="input-field" name="executor-password" placeholder="Пароль" onblur="this.placeholder = 'Пароль'" oninvalid="this.setCustomValidity('Придумайте пароль для своей учетной записи')" oninput="setCustomValidity('')" required>
+        <input type="password" class="input-field" name="executor-password-repeat" placeholder="Повторите пароль" onblur="this.placeholder = 'Повторите пароль'" oninvalid="this.setCustomValidity('Пароли не совпадают')" oninput="setCustomValidity('')" required>
+        <input class="sign-button" type="submit" value="Регистрация" ng-click="register()">
+    </form>
+    <p>Если у вас есть аккаунт, <a class="open-popup" href="#sign-in-popup">войдите</a></p>
+    <button title="Close (Esc)" type="button" class="mfp-close" ng-click="cancel()">×</button>
+</div>

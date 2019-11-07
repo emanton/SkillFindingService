@@ -1,0 +1,13 @@
+<div id="sign-in-popup" class="sign-popup white-popup mfp-close-btn-in">
+    <h3>Войти</h3>
+    <form class="sign-up-form" method="POST">
+        <input ng-model="loginData.login" type="email" class="input-field" name="executor-email" placeholder="E-mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" oninvalid="this.setCustomValidity('Введите Ваш e-mail адрес')" oninput="setCustomValidity('')" required>
+        <input ng-model="loginData.password" type="password" class="input-field" name="executor-password" placeholder="Пароль" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Пароль'" oninvalid="this.setCustomValidity('Придумайте пароль для своей учетной записи')" oninput="setCustomValidity('')" required>
+        <input class="sign-button" type="submit" value="Войти" ng-click="login()">
+    </form>
+    <div class="another-signing">
+        <a href="#">Восстановить пароль</a>
+        <a class="open-popup" href="#sign-up-popup">Зарегистрироваться</a>
+    </div>
+    <button title="Close (Esc)" type="button" class="mfp-close" ng-click="cancel()">×</button>
+</div>

@@ -1,0 +1,70 @@
+<main>
+    <div>
+        <section class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 banner-content">
+                        <h1>Поможем вам найти человека для выполнения вашего задания</h1>
+                        <div class="should-be-done">
+                            <div class="should-be-field-wrap">
+                                <input ng-model="homeController.searchText" type="text" class="should-be-done-field" name="should-be-done" id="should-be-done-field" placeholder="Напишите, что нужно сделать" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Напишите, что нужно сделать'">
+                            </div>
+                            <button class="found-button" ng-click="homeController.findBtnClick(homeController.searchText)">Найти</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section class="how-to-find how-to-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title">как найти исполнителя?</h2>
+                </div>
+            </div>
+            <ol class="row how-to-list">
+                <li class="col-lg-4 col-md-4">
+                    <div class="list-icon"></div>
+                    <p>Напишите, что нужно
+                        <br>сделать</p>
+                </li>
+                <li class="col-lg-4 col-md-4">
+                    <div class="list-icon"></div>
+                    <p>Выберите понравившегося
+                        <br>исполнителя</p>
+                </li>
+                <li class="col-lg-4 col-md-4">
+                    <div class="list-icon"></div>
+                    <p>Сделайте звонок</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section class="how-to-get how-to-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title">как получить работу?</h2>
+                </div>
+            </div>
+            <ol class="row how-to-list">
+                <li class="col-lg-4 col-md-4">
+                    <div class="list-icon"></div>
+                    <p>Зарегистрируйтесь на
+                        <br>сайте</p>
+                </li>
+                <li class="col-lg-4 col-md-4">
+                    <div class="list-icon"></div>
+                    <p>Заполните профиль для
+                        <br>привлечения клиентов</p>
+                </li>
+                <li class="col-lg-4 col-md-4">
+                    <div class="list-icon"></div>
+                    <p>Не пропускайте звонки :)</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+</main>

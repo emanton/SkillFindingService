@@ -1,0 +1,217 @@
+@media only screen and (max-width: 1199px) {
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    .searching-item .searching-description {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .page-header .sign-links {
+        word-spacing: 4px;
+    }
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    .input-grid {
+        width: 352px;
+    }
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    .searching-item .searching-description {
+        padding: 18px 25px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .white-popup {
+        padding: 50px 20px;
+    }
+    .how-to-section li:not(:last-child) .list-icon::after {
+        display: none;
+    }
+    .page-header {
+        padding: 5px 0;
+        text-align: center;
+    }
+    .page-header .sign-links {
+        text-align: center;
+    }
+    .executor-requisites {
+        margin-top: 10px;
+    }
+    .executor-align {
+        text-align: center;
+    }
+    .executor-menu {
+        right: calc(50% - 78px);
+        right: -webkit-calc(50% - 78px);
+        top: -webkit-calc(100% + 5px);
+        top: calc(100% + 5px);
+    }
+    .banner {
+        height: -webkit-calc(100vh - 132px);
+        height: calc(100vh - 132px);
+    }
+    .banner h1 {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+    .how-to-section {
+        padding: 40px 0;
+    }
+    .section-title {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+    .how-to-list .list-icon {
+        margin-bottom: 0px;
+    }
+    .page-footer {
+        padding: 35px 0 0;
+    }
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    .executor-about {
+        flex-wrap: wrap;
+    }
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    .user-data-info .col1 {
+        margin-right: 45px;
+    }
+    .change-password-form .input-grid {
+        max-width: 540px;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .change-password-form .editing-label {
+        line-height: 30px;
+        display: block;
+        width: 100%;
+    }
+    .input-grid input[type="password"] {
+        display: block;
+        max-width: 100%;
+    }
+    .add-services-popup .searching-results td,
+    .add-services-popup .searching-results th {
+        padding: 10px;
+    }
+        /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    /*---------saerch-page.HTML---------*/
+    .searching-item{
+         height: auto;
+         padding-top: 10px;
+    }
+    .searching-item .searching-description{
+        max-width: 100%;
+        padding: 15px 10px;
+    }
+    .searching-item .searching-item-img-wrap {
+    display: block;
+    margin: 0 auto;
+}
+.success-counters p + p {
+    margin-left: 20px;
+}
+}
+
+@media only screen and (max-width: 425px) {
+
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    /*---------executor.HTML---------*/
+    .executor-about {
+        margin-bottom: 40px;
+    }
+    .executor-about .executor-avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .executor-about .resume-name,
+    .executor-about .resume-city {
+        margin-bottom: 5px;
+    }
+    .fb-item {
+        padding: 20px 15px;
+    }
+    .fb-item .feedback-text {
+        line-height: 18px;
+    }
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    /*---------my-profile.HTML---------*/
+    .orders-notification {
+        margin-bottom: 75px;
+        padding: 32px 20px 32px 20px;
+    }
+    .orders-notification h3::before {
+        display: none;
+    }
+    .user-data-info .column {
+        width: 100%;
+    }
+    .input-grid {
+        max-width: 388px;
+        width: 100%;
+    }
+    .user-data-info .column .editing-label {
+        line-height: 30px;
+        display: block;
+        width: 100%;
+    }
+    .user-data-info .col1 {
+        margin-right: 0;
+    }
+    .user-data-info .column p.editing-label {
+        margin-bottom: 15px;
+    }
+    .input-grid input[type="text"],
+    .input-grid input[type="tel"],
+    .input-grid input[type="email"] {
+        max-width: 100%;
+    }
+    .worktime label {
+        margin-right: 10px;
+    }
+    .profile-trigger a {
+        padding: 12px 8px;
+    }
+    .add-services-popup .searching-results tr td:last-child .add-service-btn,
+    .add-services-popup .searching-results tr th:last-child .add-service-btn {
+        float: none;
+    }
+    .add-services-popup .searching-results tr td:last-child p,
+    .add-services-popup .searching-results tr th:last-child p {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+}
+
+@media only screen and (max-width: 320px) {}

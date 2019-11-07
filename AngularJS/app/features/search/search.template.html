@@ -1,0 +1,105 @@
+<main class="container">
+    <div class="row mTop">
+        <div class="col-lg-3">
+            <div class="searching-filter" style="    min-height: 700px;">
+                <h4 class="searching-way">Рейтинг</h4>
+                <div class="filtering-group">
+                    <label for="rate-from" class="filter-label">От</label>
+                    <select name="rate-from" id="rate-from" class="dropdown margR">
+                        <option value="none">- От -</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <label for="rate-to" class="filter-label">До</label>
+                    <select name="rate-to" id="rate-to" class="dropdown">
+                        <option value="none">- До -</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <h4 class="searching-way">Стоимость в час</h4>
+                <div class="filtering-group">
+                    <label for="price-from" class="filter-label">От</label>
+                    <input type="number" style="width: 67px; margin-right: 10px;"/>
+                    <!-- <select name="price-from" id="price-from" class="margR dropdown">
+                        <option value="none">- От -</option>
+                        <option value="0">0</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+                        <option value="1000">1000</option>
+                    </select> -->
+                    <label for="price-to" class="filter-label">До</label>
+                    <input type="number" style="width: 67px;"/>
+                    <!-- <select name="price-to" id="price-to" class="dropdown">
+                        <option value="none">- До -</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+                        <option value="1000">1000</option>
+                    </select> -->
+                </div>
+                <h4>Пол</h4>
+                <div class="radio-wrap">
+                    <input type="radio" class="radio" name="sex" id="sex-male">
+                    <label for="sex-male">Мужской</label>
+                    <input type="radio" class="radio" name="sex" id="sex-female">
+                    <label for="sex-female">Женский</label>
+                </div>
+                <button class="apply-filter" id="apply-filter">Применить фильтр</button>
+                <a href="#" class="clear-filter-btn">Сбросить фильтр</a>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <h2>Название страницы</h2>
+            <div class="searching-item" ng-repeat="result in searchController.results">
+                <a ui-sref="app.main.userProfile({userId: result.Id})" class="searching-item-img-wrap">
+                    <!-- REDO -->
+                        <img src="img/user-avatar.jpg" alt="user-avatar">
+                    </a>
+                <div class="searching-description">
+                    <div class="s-item-head-wrapping">
+                        <h3 class="name"><a ui-sref="app.main.userProfile({userId: result.Id})">{{result.Firstname}} {{result.Lastname}}</a></h3>
+                        <span class="price">{{result.Salary}} грн/час</span>
+                    </div>
+                    <div class="success-counters">
+                        <p>Отзывов: <a href="#" class="feedbacks-counter">{{result.Comments.length}}</a></p>
+                        <p>Средняя оценка: <a href="#" class="rating-counter">{{searchController.getAverageRateFromComments(result.Comments)}}</a></p>
+                    </div>
+                    <p> {{result.Description}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="pagination row">
+        <div class="col-md-12">
+            <ul>
+                <li><a href="#">«</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div> -->
+</main>
