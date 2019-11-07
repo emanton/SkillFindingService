@@ -10,6 +10,10 @@ A worker can register in this service. Then, fill some information about him and
 
 A client can write in the search field some nessesary service, which he needs. Then, he will see the most suitable people, who can help him.
 
+
+
+Projects:
+
 Core: Entities
 
 Data: Implemented database logic
