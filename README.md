@@ -9,3 +9,10 @@ There are 2 types of users:
 A worker can register in this service. Then, fill some information about him and choose skills which he can do.
 
 A client can write in the search field some nessesary service, which he needs. Then, he will see the most suitable people, who can help him.
+
+Core: Entities
+Data: Implemented database logic
+Services: Implemented business logic
+Services.Model: Implemented models for business logic
+SkillsFindingService: ASP.Net WebAPI project
+AngularJS: ui in AngularJS
